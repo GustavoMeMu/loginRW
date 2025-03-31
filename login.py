@@ -9,7 +9,7 @@ def iniciar_sesion():
             nombre, password = linea.strip().split(":")
             usuarios[nombre] = password
     except Exception as e:
-        print(e,"No hay usuarios registrados. Comenzando la creación de usuario.")
+        print("No hay usuarios registrados. Comenzando la creación de usuario.")
         return crear_usuario()
 
     nombre = input("Ingrese su nombre de usuario: ")
@@ -18,6 +18,7 @@ def iniciar_sesion():
     if nombre in usuarios and usuarios[nombre] == password:
         print("Sesión iniciada")
         print("Bienvenido al programa")
+        menu()
     else:
         print("Usuario no existente. Crea un usuario.")
         crear_usuario()
